@@ -37,6 +37,10 @@ static NSString *filePreferencesIdentity = @"FilePreferences";
 	NSString *pname;
 	while (pname = [direnum nextObject])
 	{
+        BOOL isDir;
+        if ([[NSFileManager defaultManager] fileExistsAtPath:pname isDirectory:&isDir]) {
+            continue;
+        }
 		[fileList addObject:pname];
 		NSString *title = [CHMDocument TitleForFile:pname];
 		if (title && [title length] > 0)
