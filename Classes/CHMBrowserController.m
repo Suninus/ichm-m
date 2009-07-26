@@ -125,6 +125,7 @@
 	self.view.autoresizesSubviews = YES;
 	self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	webView.autoresizesSubviews = YES;
+    webView.backgroundColor = [UIColor whiteColor];
 	webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	NSString *scaleToFitPref = [[CHMDocument CurrentDocument] getPrefForKey:@"scale to fit" withDefault:@"NO"];
 	if ([scaleToFitPref isEqualToString:@"YES"])
