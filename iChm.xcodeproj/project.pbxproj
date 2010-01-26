@@ -742,7 +742,7 @@
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = iChm;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B29628F0-B56B-45EB-9E2F-962DBEB3EFFA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "446D897E-AE0E-4865-A0FC-8D18623209B6";
 			};
 			name = Debug;
 		};
@@ -759,8 +759,6 @@
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = iChm;
-				PROVISIONING_PROFILE = "10B8BB3E-E6A8-4345-9715-A77C891DE832";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10B8BB3E-E6A8-4345-9715-A77C891DE832";
 			};
 			name = Release;
 		};
@@ -775,7 +773,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -789,7 +787,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};
@@ -803,7 +801,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = "Ad Hoc";
 		};
@@ -836,7 +834,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E2D7C15A-21C7-41C7-908A-800E93EE262F";
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Distribution;
 		};

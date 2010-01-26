@@ -264,8 +264,6 @@ static CHMDocument *currentDocument = nil;
 - (id)init
 {
     tocSource = nil;
-    zoomFactor = 1;
-    encodingName = [self getPrefForKey:@"text_encoding" withDefault:nil];
     return self;
 }
 
@@ -279,6 +277,8 @@ static CHMDocument *currentDocument = nil;
 	chmFileHandle = chm_open( [filePath fileSystemRepresentation] );
 	if (chmFileHandle)
 		[self loadMetadata];
+    zoomFactor = [[self getPrefForKey:@"zoomFactor" withDefault:[NSNumber numberWithFloat:1.0]] floatValue];
+    encodingName = [self getPrefForKey:@"text_encoding" withDefault:nil];
 	return self;
 }
 
@@ -289,6 +289,8 @@ static CHMDocument *currentDocument = nil;
 	[fileName retain];
 	NSString* docDir = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
 	[self readFromFile:[NSString stringWithFormat:@"%@/%@", docDir, filename]];
+    zoomFactor = [[self getPrefForKey:@"zoomFactor" withDefault:[NSNumber numberWithFloat:1.0]] floatValue];
+    encodingName = [self getPrefForKey:@"text_encoding" withDefault:nil];
 	return self;
 }
 
@@ -567,14 +569,21 @@ static CHMDocument *currentDocument = nil;
 }
 
 #pragma mark zoom
+- (void)zoomFactorChanged
+{
+    [self setPref:[NSNumber numberWithFloat: zoomFactor] forKey:@"zoomFactor"];
+}
+
 - (void)zoomIn
 {
     zoomFactor = zoomFactor * 1.2;
+    [self zoomFactorChanged];
 }
 
 - (void)zoomOut
 {
     zoomFactor = zoomFactor / 1.2;
+    [self zoomFactorChanged];
 }
 
 #pragma mark preference
