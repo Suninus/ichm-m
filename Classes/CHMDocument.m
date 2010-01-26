@@ -383,12 +383,13 @@ static CHMDocument *currentDocument = nil;
     
 	struct chmUnitInfo info;
 	void *buffer = nil;
+    size_t len;
 	@synchronized(self)
 	{
 		if (chm_resolve_object( chmFileHandle, [path UTF8String], &info ) == CHM_RESOLVE_SUCCESS)
 		{
             size_t offset = [prefix lengthOfBytesUsingEncoding:NSASCIIStringEncoding];
-            size_t len = info.length + offset;
+            len = info.length + offset;
 			buffer = malloc( len  );
             if (offset > 0)
                 memcpy(buffer, [prefix cStringUsingEncoding:NSASCIIStringEncoding], offset);
@@ -404,7 +405,7 @@ static CHMDocument *currentDocument = nil;
 	}
     
 	if (buffer)
-		return [NSData dataWithBytesNoCopy:buffer length:info.length];
+		return [NSData dataWithBytesNoCopy:buffer length:len];
 	
 	return nil;
 	
