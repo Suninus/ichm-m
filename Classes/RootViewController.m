@@ -92,7 +92,7 @@
 	[aboutViewButton addTarget:self action:@selector(aboutPage:) forControlEvents:UIControlEventTouchUpInside];
 	UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithCustomView:aboutViewButton];
 	self.navigationItem.rightBarButtonItem = aboutButton;
-	[aboutViewButton release];
+	[aboutButton release];
 	
 	self.tableView.rowHeight = 40;
 }
@@ -280,7 +280,7 @@
 {
 	AboutPageController *aboutPageController = [[AboutPageController alloc] init];
 	[[self navigationController] pushViewController:aboutPageController animated:YES];
-
+    [aboutPageController release];
 }
 
 #pragma mark notification

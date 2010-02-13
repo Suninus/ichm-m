@@ -255,7 +255,10 @@ static CHMDocument *currentDocument = nil;
 {
 	CHMDocument *doc = [[CHMDocument alloc] initWithoutTOCWithFileName:filename];
 	if ([doc docTitle] == nil)
+    {
+        [doc release];
 		return nil;
+    }
 	NSString *title = [NSString stringWithString:[doc docTitle]];
 	[doc release];
 	return title;
