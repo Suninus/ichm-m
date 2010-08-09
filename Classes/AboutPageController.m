@@ -86,13 +86,13 @@
 	int idx = indexPath.row/2;
 	if (idx * 2 == indexPath.row)
 	{
-		cell.text = [(NSDictionary*)[creditsData objectAtIndex:idx] objectForKey:@"title"];
-		cell.font = [UIFont boldSystemFontOfSize:18];
+		cell.textLabel.text = [(NSDictionary*)[creditsData objectAtIndex:idx] objectForKey:@"title"];
+		cell.textLabel.font = [UIFont boldSystemFontOfSize:18];
 	}
 	else
 	{
-		cell.text = [(NSDictionary*)[creditsData objectAtIndex:idx] objectForKey:@"name"];
-		cell.font = [UIFont systemFontOfSize:18];
+		cell.textLabel.text = [(NSDictionary*)[creditsData objectAtIndex:idx] objectForKey:@"name"];
+		cell.textLabel.font = [UIFont systemFontOfSize:18];
 		cell.indentationLevel = 2;
 	}
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
