@@ -306,9 +306,22 @@ static CHMDocument *currentDocument = nil;
 	
 	
     [self loadMetadata];
-	[NSThread detachNewThreadSelector:@selector(setupTOCSource) toTarget:self withObject:NULL];
-	//[self setupTOCSource];
+    [self reloadTOC];
 	return YES;
+}
+
+- (void)reloadTOC
+{
+    if (tocSource)
+    {
+        [tocSource release];
+        tocSource = nil;
+    }
+    if (indexSource) {
+        [indexSource release];
+        indexSource = nil;
+    }
+	[NSThread detachNewThreadSelector:@selector(setupTOCSource) toTarget:self withObject:NULL];    
 }
 
 - (void)setupTOCSource{

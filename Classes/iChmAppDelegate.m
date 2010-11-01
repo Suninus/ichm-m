@@ -74,6 +74,9 @@ static NSString *filePreferencesIdentity = @"FilePreferences";
 - (void) setPreference:(id)pref ForFile:(NSString*)filename
 {
 	[filePreferences setObject:pref forKey:filename];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject:filePreferences forKey:filePreferencesIdentity];
+	[defaults synchronize];
 }
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

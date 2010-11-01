@@ -734,7 +734,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robin Lu";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -743,7 +743,7 @@
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = iChm;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "446D897E-AE0E-4865-A0FC-8D18623209B6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Debug;
 		};
@@ -752,16 +752,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Robin Lu (AY4SK4962Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robin Lu (AY4SK4962Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iChm_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = iChm;
-				PROVISIONING_PROFILE = "0DE4CB11-700C-4B4B-9B49-7D9E3641A535";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0DE4CB11-700C-4B4B-9B49-7D9E3641A535";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Release;
 		};

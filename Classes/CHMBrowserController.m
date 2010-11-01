@@ -186,6 +186,9 @@
 
 - (void)settingSaved
 {
+    needResetCurrentItem = YES;
+    [[CHMDocument CurrentDocument] reloadTOC];
+    [self updateTOCButton];
     [webView reload];
 }
 #pragma mark load page
@@ -321,18 +324,18 @@
 	{
 		path = [[path componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"#?"]] objectAtIndex:0];
 		currentItem = [toc itemForPath:path withStack:nil];
-	}
-	
-	if (currentItem)
-	{
-		[[CHMDocument CurrentDocument] setPref:[currentItem path] forKey:@"last path"];
 	}	
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webview
 {	
+    NSURL *url = [webView.request URL];
+	NSString *path = [self extractPathFromURL:url];
+    [[CHMDocument CurrentDocument] setPref:path forKey:@"last path"];
+    
 	CHMTableOfContent *toc = [[CHMDocument CurrentDocument] tocSource];
-	if (toc)
+
+    if (toc)
 	{
 		[self setCurrentItem];
 	}
