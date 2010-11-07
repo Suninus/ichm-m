@@ -85,6 +85,10 @@
 			 selector:@selector(updateFilelist:) name:HTTPUploadingFinishedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self
 			 selector:@selector(updateFilelist:) name:HTTPFileDeletedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateFilelist:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 	fileManagerController = nil;
 	
 	// about page
