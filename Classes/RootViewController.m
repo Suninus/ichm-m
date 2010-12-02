@@ -138,10 +138,10 @@
 		cell = [tableView dequeueReusableCellWithIdentifier:EmptyCellIdentifier];
 		if (cell == nil)
 			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:EmptyCellIdentifier] autorelease];
-		cell.text = NSLocalizedString(@"Start File Manager to upload files", @"Start File Manager to upload files");
+		cell.textLabel.text = NSLocalizedString(@"Start File Manager to upload files", @"Start File Manager to upload files");
 		cell.accessoryType = UITableViewCellSeparatorStyleNone;
-		cell.image = [UIImage imageNamed:@"uparrow.png"];
-		cell.font = [UIFont italicSystemFontOfSize:16];		
+		cell.imageView.image = [UIImage imageNamed:@"uparrow.png"];
+		cell.textLabel.font = [UIFont italicSystemFontOfSize:16];		
 	}
 	else {
 		cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -168,7 +168,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if ([[self fileList] count] == 0)
+    {
+        [self startFileManager:self];
 		return;
+    }
 	
     // Navigation logic -- create and push a new view controller
 	NSString* filename = [[self fileList] objectAtIndex:indexPath.row];

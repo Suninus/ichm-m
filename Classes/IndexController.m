@@ -114,7 +114,7 @@ static BOOL tableViewIndexMoveOut(id self, SEL _cmd) {
 	{
 		item = [rootItem childAtIndex:indexPath.row];
 	}
-	cell.text = [item name];
+	cell.textLabel.text = [item name];
     return cell;
 }
 

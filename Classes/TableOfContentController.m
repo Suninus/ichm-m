@@ -77,7 +77,7 @@
     }
     // Configure the cell
 	LinkItem *item = [rootItem childAtIndex:indexPath.row];
-	cell.text = [item name];
+	cell.textLabel.text = [item name];
 	
 	if ([item numberOfChildren] > 0)
 		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
