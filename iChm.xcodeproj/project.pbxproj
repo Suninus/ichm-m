@@ -76,6 +76,7 @@
 		C3EE72BC0F544933001BAF49 /* zoom-out.png in Resources */ = {isa = PBXBuildFile; fileRef = C3EE72BA0F544933001BAF49 /* zoom-out.png */; };
 		C3EE72BD0F544933001BAF49 /* zoom-in.png in Resources */ = {isa = PBXBuildFile; fileRef = C3EE72BB0F544933001BAF49 /* zoom-in.png */; };
 		C3F11F440EA86E14004B4B46 /* FileResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F11F430EA86E14004B4B46 /* FileResource.m */; };
+		C3F5D10713194E8F0056DD71 /* redbird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F5D10613194E8F0056DD71 /* redbird@2x.png */; };
 		C3F9E53F0EB1C18600DD0D7A /* jquery.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3F9E5330EB1C05A00DD0D7A /* jquery.js */; };
 		C3FB6DC10ED82DE10043ABCF /* filemanager.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3FB6DA00ED82D6C0043ABCF /* filemanager.jpg */; };
 		C3FB6DC20ED82DE10043ABCF /* fm-browser.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3FB6DA10ED82D6C0043ABCF /* fm-browser.png */; };
@@ -249,6 +250,7 @@
 		C3EE72BB0F544933001BAF49 /* zoom-in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom-in.png"; path = "images/zoom-in.png"; sourceTree = "<group>"; };
 		C3F11F420EA86E14004B4B46 /* FileResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileResource.h; sourceTree = "<group>"; };
 		C3F11F430EA86E14004B4B46 /* FileResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileResource.m; sourceTree = "<group>"; };
+		C3F5D10613194E8F0056DD71 /* redbird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redbird@2x.png"; sourceTree = "<group>"; };
 		C3F9E5330EB1C05A00DD0D7A /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.js; path = web/jquery.js; sourceTree = "<group>"; };
 		C3FB6DA00ED82D6C0043ABCF /* filemanager.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filemanager.jpg; sourceTree = "<group>"; };
 		C3FB6DA10ED82D6C0043ABCF /* fm-browser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fm-browser.png"; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		C3EAB7D80E9DC59E00268541 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C3F5D10613194E8F0056DD71 /* redbird@2x.png */,
 				C395F1210F809CD500E7D2F2 /* option.png */,
 				C3EE72BA0F544933001BAF49 /* zoom-out.png */,
 				C3EE72BB0F544933001BAF49 /* zoom-in.png */,
@@ -588,6 +591,7 @@
 				C395F11B0F8099B500E7D2F2 /* DocumentSetting.xib in Resources */,
 				C395F1220F809CD500E7D2F2 /* option.png in Resources */,
 				C395F1740F80A89E00E7D2F2 /* textencoding.plist in Resources */,
+				C3F5D10713194E8F0056DD71 /* redbird@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
