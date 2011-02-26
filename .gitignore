@@ -2,3 +2,5 @@ build/
 iChm.xcodeproj/splyb.*
 Frameworks/
 **/xcuserdata
+*.xcworkspace
+!default.xcworkspace
