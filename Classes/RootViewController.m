@@ -27,7 +27,7 @@
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString*)reuseIdentifier
 {
 	UIImage *SpineImage = [UIImage imageNamed:@"spine.png"];
-	if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier])
+	if ((self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]))
 	{
 		backgrounView = [[UIImageView alloc] initWithFrame:frame];
 		backgrounView.image = SpineImage;

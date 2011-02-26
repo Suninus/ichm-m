@@ -73,14 +73,17 @@
 - (NSString*)setupDocroot
 {
 	NSString* docroot =[NSString stringWithFormat:@"%@/tmp/docroot", NSHomeDirectory()];
-	NSLog(docroot);
+	NSLog(@"%@",docroot);
 	NSFileManager *manager = [NSFileManager defaultManager];
 	NSError *error;
 	if(![manager removeItemAtPath:docroot error:&error])
 	{
-		NSLog([NSString stringWithFormat:@"Can not remove old docroot: %@", error ]);
+		NSLog(@"Can not remove old docroot: %@", error);
 	}
-	[manager createDirectoryAtPath:docroot attributes:nil];
+	[manager createDirectoryAtPath:docroot
+       withIntermediateDirectories:YES
+                        attributes:nil
+                             error:nil];
 	
 	NSArray * localizations = [[NSBundle mainBundle] preferredLocalizations];
 	NSString *localizedName = [localizations objectAtIndex:0];
@@ -92,16 +95,16 @@
 	//link scripts directory
 	NSString *scriptsPath = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"scripts"];
 	NSString *destPath = [NSString stringWithFormat:@"%@/scripts", docroot];
-	if (![manager createSymbolicLinkAtPath:destPath pathContent: scriptsPath])
+	if (![manager createSymbolicLinkAtPath:destPath withDestinationPath: scriptsPath error:nil])
 	{
-		NSLog([NSString stringWithFormat:@"Can not create scripts path: %@", error]);
+		NSLog(@"Can not create scripts path: %@", error);
 		return nil;
 	}	
 	NSString *imagessPath = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"webimages"];
 	destPath = [NSString stringWithFormat:@"%@/images", docroot];
-	if (![manager createSymbolicLinkAtPath:destPath pathContent: imagessPath])
+	if (![manager createSymbolicLinkAtPath:destPath withDestinationPath:imagessPath error:nil])
 	{
-		NSLog([NSString stringWithFormat:@"Can not create image path: %@", error]);
+		NSLog(@"Can not create image path: %@", error);
 		return nil;
 	}	
 	return docroot;
@@ -147,21 +150,21 @@
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Configure the cell
 	if (indexPath.row == 0)
-		cell.text =  NSLocalizedString(@"Use web browser to connect to:",@"Use web browser to connect to:");
+		cell.textLabel.text =  NSLocalizedString(@"Use web browser to connect to:",@"Use web browser to connect to:");
 	else if (indexPath.row == 1)
 	{
 		if ([httpServer port] == 80)
-			cell.text = [NSString stringWithFormat:@"http://%@", [httpServer hostName]];
+			cell.textLabel.text = [NSString stringWithFormat:@"http://%@", [httpServer hostName]];
 		else
-			cell.text = [NSString stringWithFormat:@"http://%@:%d", [httpServer hostName], [httpServer port]];
+			cell.textLabel.text = [NSString stringWithFormat:@"http://%@:%d", [httpServer hostName], [httpServer port]];
 			
-		cell.textColor = [UIColor blueColor];
-		cell.textAlignment = UITextAlignmentCenter;
-		cell.font = [UIFont boldSystemFontOfSize:20];
+		cell.textLabel.textColor = [UIColor blueColor];
+		cell.textLabel.textAlignment = UITextAlignmentCenter;
+		cell.textLabel.font = [UIFont boldSystemFontOfSize:20];
 	}
 	else if (indexPath.row == 2)
 	{
-		cell.text = NSLocalizedString(@"for uploading and deleting.",@"for uploading and deleting.");
+		cell.textLabel.text = NSLocalizedString(@"for uploading and deleting.",@"for uploading and deleting.");
 	}
     return cell;
 }

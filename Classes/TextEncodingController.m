@@ -106,7 +106,7 @@
     }
     // Set up the cell...
     NSDictionary *item = [[encodingNames objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.text = [item objectForKey:@"title"];
+    cell.textLabel.text = [item objectForKey:@"title"];
     NSString *encodingName = [[CHMDocument CurrentDocument] getPrefForKey:@"text_encoding" withDefault:nil];
     if ((indexPath.section == 0 && indexPath.row == 0 && encodingName == nil)  ||
         [encodingName isEqualToString:[item objectForKey:@"name"]])
