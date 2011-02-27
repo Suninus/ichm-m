@@ -42,6 +42,7 @@
 		C375782F0EB77FFD00A85FC6 /* rb32.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = C37576F30EB7516100A85FC6 /* rb32.png */; };
 		C382A1480EB6D21300F408BD /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = C382A1470EB6D21300F408BD /* home.png */; };
 		C382A1BF0EB7176C00F408BD /* uparrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C382A1BE0EB7176C00F408BD /* uparrow.png */; };
+		C38A8666131A0F980097DB65 /* NSFileManagerExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C38A8664131A0F980097DB65 /* NSFileManagerExt.m */; };
 		C38E6A7F0ED10BEA00565F61 /* rb48.png in Resources */ = {isa = PBXBuildFile; fileRef = C38E6A7E0ED10BEA00565F61 /* rb48.png */; };
 		C39366820E9C86D9001EA28D /* ITSSProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C39366810E9C86D9001EA28D /* ITSSProtocol.m */; };
 		C393669E0E9C8B23001EA28D /* CHMTableOfContent.m in Sources */ = {isa = PBXBuildFile; fileRef = C393669D0E9C8B23001EA28D /* CHMTableOfContent.m */; };
@@ -214,6 +215,8 @@
 		C37577B10EB776EF00A85FC6 /* credits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credits.plist; sourceTree = "<group>"; };
 		C382A1470EB6D21300F408BD /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = images/home.png; sourceTree = "<group>"; };
 		C382A1BE0EB7176C00F408BD /* uparrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uparrow.png; path = images/uparrow.png; sourceTree = "<group>"; };
+		C38A8664131A0F980097DB65 /* NSFileManagerExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManagerExt.m; sourceTree = "<group>"; };
+		C38A8665131A0F980097DB65 /* NSFileManagerExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFileManagerExt.h; sourceTree = "<group>"; };
 		C38E6A7E0ED10BEA00565F61 /* rb48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rb48.png; path = images/rb48.png; sourceTree = "<group>"; };
 		C39366800E9C86D9001EA28D /* ITSSProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSSProtocol.h; sourceTree = "<group>"; };
 		C39366810E9C86D9001EA28D /* ITSSProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSSProtocol.m; sourceTree = "<group>"; };
@@ -285,6 +288,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C38A8661131A0F710097DB65 /* Ext */,
 				C3E882070EA43D9200DE82FB /* RegexKitLite */,
 				C32D57EE0EA38F57002D02DC /* httpserver */,
 				C3EABB080E9E624400268541 /* chm */,
@@ -414,6 +418,15 @@
 				C3E8820E0EA4421000DE82FB /* index.html */,
 			);
 			name = FileManager;
+			sourceTree = "<group>";
+		};
+		C38A8661131A0F710097DB65 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				C38A8664131A0F980097DB65 /* NSFileManagerExt.m */,
+				C38A8665131A0F980097DB65 /* NSFileManagerExt.h */,
+			);
+			name = Ext;
 			sourceTree = "<group>";
 		};
 		C3E882070EA43D9200DE82FB /* RegexKitLite */ = {
@@ -644,6 +657,7 @@
 				C3FB6DE30ED82E900043ABCF /* HelpViewController.m in Sources */,
 				C395F11F0F8099E300E7D2F2 /* DocumentSettingController.m in Sources */,
 				C395F1720F80A85700E7D2F2 /* TextEncodingController.m in Sources */,
+				C38A8666131A0F980097DB65 /* NSFileManagerExt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

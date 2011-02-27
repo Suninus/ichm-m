@@ -86,21 +86,7 @@
 
 - (void)actionDelete:(NSString*)fileName
 {
-	NSString* docDir = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
-	NSURL *baseURL = [NSURL fileURLWithPath:docDir];
-	NSURL *fileURL = [NSURL URLWithString:fileName relativeToURL:baseURL];
-	NSString* filePath = [fileURL path];
-	NSFileManager *fm = [NSFileManager defaultManager];
-	NSError *error;
-	if(![fm removeItemAtPath:filePath error:&error])
-	{
-		NSLog(@"%@ can not be removed because:%@", filePath, error);
-	}
-	else
-	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:HTTPFileDeletedNotification object:[filePath lastPathComponent]];
-	}
-
+    [NSFileManager removeFile:fileName];
 	[connection redirectoTo:@"/"];	
 }
 

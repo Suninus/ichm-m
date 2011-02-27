@@ -3,7 +3,6 @@
 #define HTTPUploadingStartNotification @"UploadingStarted"
 #define HTTPUploadingProgressNotification @"UploadingProgress"
 #define HTTPUploadingFinishedNotification @"UploadingFinished"
-#define HTTPFileDeletedNotification @"FileDeleted"
 
 @class AsyncSocket;
 

@@ -46,7 +46,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self
 			 selector:@selector(uploadingFinished:) name:HTTPUploadingFinishedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self
-			 selector:@selector(fileDeleted:) name:HTTPFileDeletedNotification object:nil];
+			 selector:@selector(fileDeleted:) name:NSFileManagerEXTFileDeletedNotification object:nil];
 
 	// setup view header
 	self.tableView.tableHeaderView = headerView;

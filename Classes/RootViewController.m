@@ -30,7 +30,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self
 			 selector:@selector(updateFilelist:) name:HTTPUploadingFinishedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self
-			 selector:@selector(updateFilelist:) name:HTTPFileDeletedNotification object:nil];
+			 selector:@selector(updateFilelist:) name:NSFileManagerEXTFileDeletedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateFilelist:)
                                                  name:UIApplicationDidBecomeActiveNotification
@@ -124,6 +124,14 @@
 
 }
 
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSString* filename = [[self fileList] objectAtIndex:indexPath.row];
+        [NSFileManager removeFile:filename];
+    }
+}
 
 /*
 - (void)viewDidLoad {
