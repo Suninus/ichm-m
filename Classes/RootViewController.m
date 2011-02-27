@@ -21,60 +21,6 @@
 
 @end
 
-@implementation FileTitleCell
-
-
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString*)reuseIdentifier
-{
-	UIImage *SpineImage = [UIImage imageNamed:@"spine.png"];
-	if ((self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]))
-	{
-		backgrounView = [[UIImageView alloc] initWithFrame:frame];
-		backgrounView.image = SpineImage;
-		
-		[self addSubview:backgrounView];
-		CGRect cellframe = CGRectMake(6, 2, frame.size.width - 8, 20);
-		titleLabel = [[UILabel alloc] initWithFrame:cellframe];
-		UIFont *font = [UIFont systemFontOfSize:17];
-		[titleLabel setFont:font];
-		[titleLabel setBackgroundColor:[UIColor clearColor]];
-		[self addSubview:titleLabel];
-
-		cellframe = CGRectMake(12, 18, frame.size.width - 14, 18);
-		filenameLabel = [[UILabel alloc] initWithFrame:cellframe];
-		font = [UIFont italicSystemFontOfSize:12];
-		UIColor *color = [UIColor grayColor];
-		[filenameLabel setFont:font];
-		[filenameLabel setTextColor:color];
-		[filenameLabel setBackgroundColor:[UIColor clearColor]];
-		[self addSubview:filenameLabel];
-	}
-	return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated { 
-	[super setSelected:selected animated:animated]; 
-	backgrounView.alpha = 0.5;
-}
-
-- (void) dealloc
-{
-	[titleLabel release];
-	[filenameLabel release];
-	[super dealloc];
-}
-
-- (void)setTitle:(NSString*)title
-{
-	[titleLabel setText:title];
-}
-
-- (void)setFilename:(NSString*)filename
-{
-	[filenameLabel setText:filename];
-}
-@end
-
 @implementation RootViewController
 
 #pragma mark init
@@ -132,12 +78,11 @@
     static NSString *EmptyCellIdentifier = @"EmptyFileListCell";
     
     UITableViewCell *cell;
-	CGRect frame = CGRectMake(0, 0, tableView.frame.size.width, tableView.rowHeight);
 	if ([[self fileList] count] == 0)
 	{
 		cell = [tableView dequeueReusableCellWithIdentifier:EmptyCellIdentifier];
 		if (cell == nil)
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:EmptyCellIdentifier] autorelease];
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EmptyCellIdentifier] autorelease];
 		cell.textLabel.text = NSLocalizedString(@"Start File Manager to upload files", @"Start File Manager to upload files");
 		cell.accessoryType = UITableViewCellSeparatorStyleNone;
 		cell.imageView.image = [UIImage imageNamed:@"uparrow.png"];
@@ -146,9 +91,9 @@
 	else {
 		cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil)
-			cell = [[[FileTitleCell alloc] initWithFrame:frame reuseIdentifier:CellIdentifier] autorelease];
-		[(FileTitleCell*)cell setTitle:[[self fileTitleList] objectAtIndex:indexPath.row]];
-		[(FileTitleCell*)cell setFilename:[[self fileList] objectAtIndex:indexPath.row]];
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell.textLabel.text = [[self fileTitleList] objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [[self fileList] objectAtIndex:indexPath.row];
 	}
     return cell;
 }
