@@ -79,7 +79,8 @@ static NSString *filePreferencesIdentity = @"FilePreferences";
 	[defaults synchronize];
 }
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
 	// dynamically add a method to UITableViewIndex that lets us move around the index
 	Class tvi = NSClassFromString(@"UITableViewIndex");
 	if ( !class_addMethod(tvi, @selector(moveIndexIn), (IMP)tableViewIndexMoveIn, "v@:") ) {
@@ -97,8 +98,8 @@ static NSString *filePreferencesIdentity = @"FilePreferences";
 	// Configure and show the window
 	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
+    return YES;
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	[NSURLProtocol unregisterClass:[ITSSProtocol class]];
