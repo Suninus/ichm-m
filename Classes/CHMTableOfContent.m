@@ -301,6 +301,9 @@ NULL, /* getParameterEntity */
 
 - (void)new_item
 {
+    if ([itemStack count] == 0) {
+        [self push_item];
+    }
 	curItem = [[[LinkItem alloc] init] autorelease];
 	LinkItem * parent = [itemStack lastObject];
 	[parent appendChild:curItem];
