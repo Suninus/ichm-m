@@ -84,7 +84,7 @@
 		if (cell == nil)
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EmptyCellIdentifier] autorelease];
 		cell.textLabel.text = NSLocalizedString(@"Start File Manager to upload files", @"Start File Manager to upload files");
-		cell.accessoryType = UITableViewCellSeparatorStyleNone;
+		cell.accessoryType =  UITableViewCellAccessoryNone;
 		cell.imageView.image = [UIImage imageNamed:@"uparrow.png"];
 		cell.textLabel.font = [UIFont italicSystemFontOfSize:16];		
 	}
@@ -93,6 +93,7 @@
 		if (cell == nil)
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         cell.textLabel.text = [[self fileTitleList] objectAtIndex:indexPath.row];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
         cell.detailTextLabel.text = [[self fileList] objectAtIndex:indexPath.row];
 	}
     return cell;
