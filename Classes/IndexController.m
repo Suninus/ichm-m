@@ -195,11 +195,11 @@ static BOOL tableViewIndexMoveOut(id self, SEL _cmd) {
 	for	(LinkItem* section in [indexSource children])
 	{
 		for (LinkItem* item in [section children])
-		{
-			NSComparisonResult result = [[item name] compare:searchText options:NSCaseInsensitiveSearch
-													 range:NSMakeRange(0, [searchText length])];
-			if (result == NSOrderedSame)
-				[searchSource appendChild:item];
+		{            
+            NSRange range = [[item name] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (range.location != NSNotFound) {
+                [searchSource appendChild:item];
+            }
 		}
 	}
 	
