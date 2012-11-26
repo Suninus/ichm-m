@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003878881663408000397744 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003878871663408000397744 /* Default-568h@2x.png */; };
 		1D3623260D0F684500981E51 /* iChmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iChmAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -157,6 +158,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		003878871663408000397744 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iChmAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iChmAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iChmAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iChmAppDelegate.m; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 		C3EAB7D80E9DC59E00268541 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				003878871663408000397744 /* Default-568h@2x.png */,
 				C3F5D10613194E8F0056DD71 /* redbird@2x.png */,
 				C395F1210F809CD500E7D2F2 /* option.png */,
 				C3EE72BA0F544933001BAF49 /* zoom-out.png */,
@@ -608,6 +611,7 @@
 				C395F1220F809CD500E7D2F2 /* option.png in Resources */,
 				C395F1740F80A89E00E7D2F2 /* textencoding.plist in Resources */,
 				C3F5D10713194E8F0056DD71 /* redbird@2x.png in Resources */,
+				003878881663408000397744 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

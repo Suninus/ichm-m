@@ -248,6 +248,14 @@
 }
 */
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
 - (void)dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];	
     [super dealloc];

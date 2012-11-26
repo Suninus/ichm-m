@@ -80,6 +80,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIViewController" id="619226028">
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="394667715">
+							<reference key="IBUINavigationBar"/>
 							<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="977416504">
 								<string key="IBUITitle">Manage</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -111,6 +112,14 @@
 						<reference key="destination" ref="664661524"/>
 					</object>
 					<int key="connectionID">4</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">rootViewController</string>
+						<reference key="source" ref="380026005"/>
+						<reference key="destination" ref="701001926"/>
+					</object>
+					<int key="connectionID">18</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -265,7 +274,7 @@
 				<reference key="dict.values" ref="957960031"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">17</int>
+			<int key="maxID">18</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

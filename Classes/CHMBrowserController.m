@@ -184,6 +184,14 @@
     [webView reload];
 }
 
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (void)settingSaved
 {
     needResetCurrentItem = YES;
